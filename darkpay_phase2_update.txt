@@ -1,0 +1,118 @@
+
+DARKPAY PHASE 2 UPDATE GUIDE
+
+
+
+
+v 2.0
+
+
+
+12/19/2018
+
+
+
+
+# HOW TO KNOW IF WALLET SYNC WITH PHASE 2
+
+Latest protocol is 70914. Here are the steps to verify and update your wallets :
+
+
+CONTROL WALLET
+
+Open dev console ( menu Tools → debug console)
+Type command getinfo + enter
+Look at protocol version (second line), should be 70914
+
+
+If wrong protocol, please :
+
+- backup your whole config folder first
+- close your control wallet
+- download wallet here depending on your OS :
+https://github.com/DarkPayCoin/darkpay/releases/
+- relaunch and let sync
+
+
+If you experience chain sync/startup issues :
+
+- backup your whole config folder first
+- close your control wallet
+- delete everything in your config folder EXCEPT wallet.dat and .conf files
+- download sync pack here :
+https://darkpaycoin.io/utils/dpc_fastsync.zip
+- copy zip content in your config folder (chainstate & block folders + peers.dat)
+- relaunch and let sync
+
+if you have block validation error, please launch with  - -resync param
+
+
+# VPS / MASTERNODE WALLET
+
+Connect to your VPS with SSH (putty, console, ...)
+Type command :
+darkpaycoin-cli getinfo
+Look at protocol version (second line), should be 70914
+
+If wrong protocol :
+
+** During phase 1 there was already an automated masternode setup script. **
+
+* Case 1 : If you used it to install your MN, you just have to run update script running
+these commands  in your VPS, and nothing else :
+
+wget https://raw.githubusercontent.com/DarkPayCoin/releases/master/dkpc_mn_update.sh 
+chmod +x dkpc_mn_update.sh 
+./dkpc_mn_update.sh 
+
+Script will stop, update and relaunch your daemon, keeping existing params (ip, privkey, …).
+
+Let it fully finish, be patient, once done a message will remind you to restart your MN from control wallet (right-click → start alias)
+
+
+* Case 2 : You did not use the install script to setup your MN, so you installed it manually,      so you’re tech savvy enough and you know you just have to stop, replace and relaunch daemon, available here : 
+https://github.com/DarkPayCoin/darkpay/releases/download/v3.1.99/DarkPay-3.1.99-LINUX64.zip
+
+* Case 3 : You run your MN on shared or one-click hosting, please see with provider 
+support,
+
+* * *
+
+If you experience chain sync/startup issues :
+
+- stop your masternode : ./darkpaycoin-cli stop
+- delete everything in your config folder EXCEPT wallet.dat and .conf files
+- download sync pack here :
+https://darkpaycoin.io/utils/dpc_fastsync.zip
+- copy zip content in your config folder (chainstate & block folders + peers.dat)
+- relaunch and let sync
+
+if you have block validation error, please launch with  - -resync param :
+.darkpaycoind - -resync
+
+
+WHERE ARE THE CONF FILES LOCATED ?
+
+
+Windows
+Go to Start > Run > %APPDATA%\DarkPayCoin
+(or just enter the above path in explorer)
+
+or in explorer UI click to reach :
+C:\Users\%username%\AppData\Roaming\DarkPayCoin
+
+OSX (MacOS)
+
+Open a finder window, then select the "Go" dropdown menu. In this menu please press the "Go to Folder..." option. In the window that opens type: ~/Library/Application Support/DarkPayCoin and press enter. If the folder cannot be found please repeat the steps and enter: ~/.DarkPayCoin
+
+~/Library/Application\ Support/DarkPayCoin
+(/Users/YourUserName/Library/Application\ Support/DarkPayCoin)
+
+Linux
+~/.DarkPayCoin
+(Hidden folder ".DarkPayCoin" - control+h to display in the GUI, ls -a to display in terminal)
+
+
+HELP
+
+Need for help ? Ask our devs in Discord : https://discord.gg/Jwnjhwh
