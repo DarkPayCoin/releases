@@ -43,14 +43,6 @@ Wallet built generic-linux, tested with 14.04/16.04/18.04 Ubuntu
                              .:.:.                                                           
  
 
-888888ba                    dP        888888ba                    
-88     8b                   88        88     8b                   
-88     88 .d8888b. 88d888b. 88  .dP  a88aaaa8P' .d8888b. dP    dP 
-88     88 88'   88 88'   88 88888     88        88    88 88    88 
-88    .8P 88.  .88 88       88   8b.  88        88.  .88 88.  .88 
-8888888P   88888P8 dP       dP    YP  dP         88888P8  8888P88 
-                                                               88
-                                                          d8888P  
 
 
 # GET YOUR COLD WALLET UP & RUNNING
