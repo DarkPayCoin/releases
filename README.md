@@ -2,8 +2,6 @@
 Latest DarkPay scripts and apps
 
 
-# releases
-Wallets &amp; apps
 
 ## WINDOWS 10 users
 
@@ -20,23 +18,45 @@ Wallet built generic-linux, tested with 14.04/16.04/18.04 Ubuntu
 
 
 
+# DarkPay Coin
 
-MASTERNODE SETUP GUIDE
+             .::::::::::::::::::::::::::::::::::..                                        
+          ..::::c:cc:c:c:c:c:c:c:c:c:c:c:c:cc:c::::.                                      
+          .:.                                    ::.                                      
+          .:c:                                   c::                                       
+           .:c:                                 c::                                       
+            .:c:                               cc:                                        
+             .:c:                             c::                                         
+              .:c:                           c::                                         
+               .:c:                         c::                                            
+                .:cc                       c::                                            
+                 .:cc                     c::                                              
+                  .:cc                   c::                                               
+                   .:cc                 c::                                                
+                    .:cc               c::                                                 
+                     .:cc             c::                                                  
+                      .::c           c:.                                                   
+                       .:cc         c::                                                    
+                        .::c       c:.                                                     
+                         .::c     c:.                                                      
+                           ::c.  c:.                                                       
+                             .:.:.                                                           
+ 
 
-v 1.1 - 10/05/2018
-
-------------------------
-
-
-# DarkPayCoin
-
-
+888888ba                    dP        888888ba                    
+88     8b                   88        88     8b                   
+88     88 .d8888b. 88d888b. 88  .dP  a88aaaa8P' .d8888b. dP    dP 
+88     88 88'   88 88'   88 88888     88        88    88 88    88 
+88    .8P 88.  .88 88       88   8b.  88        88.  .88 88.  .88 
+8888888P   88888P8 dP       dP    YP  dP         88888P8  8888P88 
+                                                               88
+                                                          d8888P  
 
 
 # GET YOUR COLD WALLET UP & RUNNING
 
 Download the latest version corresponding to your OS :
-https://github.com/DarkPayCoin/darkpaycoin/releases/
+https://github.com/DarkPayCoin/darkpay/releases/
 
 # UNPACK & LAUNCH IT
 
@@ -116,7 +136,7 @@ save the file.
 connect your VPS with ssh, get and run the DarkPayCoin MN install script :
 
 rm dpc_mn_install.sh  if you’re updating from previous version
-wget https://raw.githubusercontent.com/DarkPayCoin/releases/master/dpc_mn_install.sh && chmod +x dpc_mn_install.sh  && ./dpc_mn_install.sh 
+wget https://raw.githubusercontent.com/DarkPayCoin/releases/master/dpc_mn_install.sh && chmod +x dpc_mn_install.sh && ./dpc_mn_install.sh 
 
 Answer the script and provide your MN private key (or generate new one and put it in masternode.conf local cold wallet file) to auto-configure .
 
