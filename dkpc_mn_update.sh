@@ -179,10 +179,23 @@ function download_node() {
   cp $COIN_CLI $COIN_PATH
   cp $COIN_CLI /root/
   cd ~ >/dev/null 2>&1
-	#download chain
-	#wget -q $CHAIN_LINK
-	#unzip $CHAIN >/dev/null 2>&1
-  rm -rf $TMP_FOLDER >/dev/null 2>&1
+	
+  #download chain
+cd $CONFIGFOLDER >/dev/null 2>&1
+  echo -e "${GREY}* Downloading last bootstrap to sync fast...${NC}"
+wget -q $CHAIN_LINK
+ echo -e "${GREY}* Cleaning chain and blocks files...${NC}"
+ rm -rf $CONFIGFOLDER/blocks > /dev/null 2>&1
+ rm -rf $CONFIGFOLDER/chainstate > /dev/null 2>&1
+
+  echo -e "${GREY}* Unpacking bootstrap... Please wait, it could take several minutes depending on hardware.${NC}"
+
+        unzip -f $CHAIN 
+  echo -e "${GREY}* Unpacking bootstrap done !${NC}"
+rm -rf $COIN_ZIP >/dev/null 2>&1
+rm -rf $TMP_FOLDER >/dev/null 2>&1
+rm -rf $CONFIGFOLDER/banlist.dat
+  echo -e "${GREY}* Made some cleanup, starting node...${NC}"
 
 }
 
@@ -223,9 +236,24 @@ function update_config() {
   cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
 
 #ADDNODES
-addnode=138.68.108.10
-addnode=68.183.213.43
-addnode=167.99.220.116
+addnode=46.101.231.40
+addnode=142.93.97.228
+addnode=206.189.173.84
+addnode=165.227.172.190
+addnode=159.65.144.67
+addnode=128.199.198.131
+addnode=178.62.80.178
+addnode=128.199.203.152
+addnode=81.50.134.65
+whitelist=46.101.231.40
+whitelist=142.93.97.228
+whitelist=206.189.173.84
+whitelist=165.227.172.190
+whitelist=159.65.144.67
+whitelist=128.199.198.131
+whitelist=178.62.80.178
+whitelist=128.199.203.152
+whitelist=81.50.134.65
 
 EOF
 }
@@ -255,7 +283,7 @@ function important_information() {
  echo -e "Use ${RED}$COIN_CLI masternode status${NC} to check your MN."
 
  echo -e "-------------------------------------------------------------"
- echo -e "NOW PLEASE ${RED}ENABLE YOUR MN FROM YOUR CONTROL WALLET${NC} and watch the debug.log file with command : tail -f .darkpaycoin/debug.log"
+ echo -e "NOW PLEASE ${RED}ENABLE YOUR MN FROM YOUR CONTROL WALLET{NC}"
 
 }
 
@@ -321,7 +349,7 @@ display_logo
 start_message
 checks
 purgeOldInstallation
-prepare_system
+#prepare_system
 clear
 download_node
 
